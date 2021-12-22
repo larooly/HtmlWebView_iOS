@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-Qb-j6q">
+                                <rect key="frame" x="0.0" y="85" width="414" height="300"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="BM0-Lb-DKE"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" minimumFontSize="1"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트 용입니다 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cy-qg-5f8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hRz-FR-MNC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="하하" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hO1-7b-3U0">
+                                <rect key="frame" x="0.0" y="395" width="414" height="200"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kd8-LW-ezH"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ih5-H1-TsA">
+                                <rect key="frame" x="167" y="616" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.80784313730000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="91u-xV-UYj"/>
+                                    <constraint firstAttribute="height" constant="30" id="pkY-Ad-YQG"/>
+                                </constraints>
+                                <state key="normal" title="야 뽑아 ">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="getTexttoHtml:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAQ-AX-pNl"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용뽑기용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3TY-iJ-vZk">
+                                <rect key="frame" x="0.0" y="661" width="414" height="150"/>
+                                <color key="backgroundColor" red="0.95122324749999998" green="1" blue="0.86289610959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AFz-J7-ROV"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4cy-qg-5f8" secondAttribute="trailing" id="3SQ-Yg-l9N"/>
+                            <constraint firstItem="4cy-qg-5f8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4gy-0V-DQy"/>
+                            <constraint firstItem="J5u-Qb-j6q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6yU-Z0-aWb"/>
+                            <constraint firstItem="J5u-Qb-j6q" firstAttribute="top" secondItem="4cy-qg-5f8" secondAttribute="bottom" constant="20" id="70R-ft-Nyu"/>
+                            <constraint firstItem="ih5-H1-TsA" firstAttribute="top" secondItem="hO1-7b-3U0" secondAttribute="bottom" constant="21" id="HFo-sI-gIt"/>
+                            <constraint firstItem="hO1-7b-3U0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ja8-I2-xk9"/>
+                            <constraint firstItem="4cy-qg-5f8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PW2-lG-bgb"/>
+                            <constraint firstItem="3TY-iJ-vZk" firstAttribute="top" secondItem="ih5-H1-TsA" secondAttribute="bottom" constant="15" id="RyR-6Q-nJ1"/>
+                            <constraint firstItem="3TY-iJ-vZk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zbg-vL-uTe"/>
+                            <constraint firstItem="3TY-iJ-vZk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p8P-zT-Rhm"/>
+                            <constraint firstItem="hO1-7b-3U0" firstAttribute="top" secondItem="J5u-Qb-j6q" secondAttribute="bottom" constant="10" id="pxQ-52-rsu"/>
+                            <constraint firstItem="ih5-H1-TsA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rbR-04-ZEM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J5u-Qb-j6q" secondAttribute="trailing" id="ui2-Ay-9dl"/>
+                            <constraint firstItem="hO1-7b-3U0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zVS-70-Vhw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="WebviewOutlet" destination="J5u-Qb-j6q" id="sIE-L7-9xo"/>
+                        <outlet property="showOnlyContentLayout" destination="3TY-iJ-vZk" id="BBG-J7-aaa"/>
+                        <outlet property="textviewOutlet" destination="hO1-7b-3U0" id="xhZ-jG-tBD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-15.942028985507248" y="93.080357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
